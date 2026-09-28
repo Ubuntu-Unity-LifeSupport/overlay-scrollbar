@@ -1,12 +1,7 @@
 Source: overlay-scrollbar
 Priority: optional
 Maintainer: Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
-Build-Depends: autotools-dev,
-               debhelper (>= 9),
-               dh-autoreconf,
-               libcairo2-dev (>= 1.10),
-               libglib2.0-dev (>= 2.26.0),
-               libgtk2.0-dev (>= 2.24.26),
+Build-Depends: debhelper (>= 9),
 Standards-Version: 3.9.6
 Section: libs
 Homepage: http://launchpad.net/ayatana-scrollbar
@@ -17,28 +12,26 @@ Vcs-Bzr: https://code.launchpad.net/~ayatana-scrollbar-team/overlay-scrollbar/tr
 Vcs-Browser: https://bazaar.launchpad.net/~ayatana-scrollbar-team/overlay-scrollbar/trunk/files
 
 Package: overlay-scrollbar-gtk2
-Section: libs
+Section: oldlibs
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
-         ${shlibs:Depends},
          overlay-scrollbar (= ${source:Version}),
-Replaces: liboverlay-scrollbar-0.2-0 (<< 0.2.16+r348),
-          liboverlay-scrollbar-0.2-dev (<< 0.2.16+r348),
-Conflicts: liboverlay-scrollbar-0.2-0 (<< 0.2.16+r348),
-           liboverlay-scrollbar-0.2-dev (<< 0.2.16+r348),
-Description: GTK 2 module for overlay scrollbars
- Overlay scrollbar is a GtkModule enabling a dynamic overlay behavior.
+Description: transitional package, the GTK 2 overlay scrollbar module is gone
+ The module needed a GTK 2 patch that Ubuntu no longer carries: loaded from
+ GTK2_MODULES it made GTK 2 applications fail with an undefined symbol. This
+ empty package removes it on upgrade and can be removed itself.
 
 Package: overlay-scrollbar
 Section: libs
 Architecture: all
 Multi-Arch: foreign
+Pre-Depends: ${misc:Pre-Depends},
 Depends: ${misc:Depends},
 Conflicts: overlay-scrollbar-gtk3
 Replaces: overlay-scrollbar-gtk3
 Description: Scrollbar overlay - configuration
  Overlay scrollbar is a GtkModule enabling a dynamic overlay behavior.
  .
- This package contains GSettings schemas and startup scripts for overlay
- scrollbars.
+ This package now only contains the GSettings schemas, which settings tools
+ still read; the session script that loaded the GTK 2 module is removed.

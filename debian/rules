@@ -1,22 +1,10 @@
 #!/usr/bin/make -f
 
-CONFIGURE_COMMON_FLAGS = --disable-static \
-			 --libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
-			 --disable-silent-rules
-
-export DPKG_GENSYMBOLS_CHECK_LEVEL = 4
+# The GTK 2 module no longer builds or works (it needs a GTK 2 patch Ubuntu
+# dropped), so nothing is compiled: overlay-scrollbar ships only the
+# GSettings schemas, overlay-scrollbar-gtk2 is empty.
 
 %:
-	dh $@ --with autoreconf
+	dh $@
 
-override_dh_autoreconf:
-	NOCONFIGURE=1 dh_autoreconf ./autogen.sh
-
-override_dh_auto_configure:
-	dh_auto_configure -- $(CONFIGURE_COMMON_FLAGS)
-
-override_dh_install:
-	dh_install --fail-missing
-	find debian/overlay-scrollbar-gtk2 -name \*.la -delete
-
-override_dh_makeshlibs:
+override_dh_auto_configure override_dh_auto_build override_dh_auto_test override_dh_auto_install override_dh_auto_clean:

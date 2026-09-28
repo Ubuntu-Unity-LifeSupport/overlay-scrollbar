@@ -1,3 +1,19 @@
+overlay-scrollbar (0.2.17.1+16.04.20151117-0ubuntu5+unity1) resolute; urgency=medium
+
+  * Stop loading the dead GTK 2 module. It needs a GTK 2 patch Ubuntu no
+    longer carries, so /etc/X11/Xsession.d/81overlay-scrollbar, which put it
+    into GTK2_MODULES for the whole session, made GTK 2 applications fail
+    with "undefined symbol: ubuntu_gtk_set_use_overlay_scrollbar" (a second
+    Pidgin started from the messaging menu, for example).
+    - overlay-scrollbar: ship only the GSettings schemas (unity-tweak-tool
+      reads them); remove 81overlay-scrollbar with rm_conffile.
+    - overlay-scrollbar-gtk2: empty transitional package, so upgrades
+      remove the module.
+    - Nothing is compiled any more; the source no longer builds against
+      26.04's GTK 2 anyway.
+
+ -- Ubuntu Unity Life Support <mihail.rozshko@gmail.com>  Sat, 26 Sep 2026 17:59:25 +0000
+
 overlay-scrollbar (0.2.17.1+16.04.20151117-0ubuntu5) noble; urgency=medium
 
   * No-change rebuild for CVE-2024-3094
