@@ -1,0 +1,341 @@
+overlay-scrollbar 0.2.16 (March 21, 2012)
+-----------------------------------------
+
+* Always use bg[SELECTED] for the bar in Gtk+ 2.
+
+* Bugs fixed:
+ 907111 nautilus crashed with SIGSEGV in show_thumb_cb()
+ 934123 Low visibility impaired users can't easily disable overlay scrollbars
+ 951121 scroll *on* thumb not functional
+
+
+overlay-scrollbar 0.2.15 (February 22, 2012)
+--------------------------------------------
+
+* Resize using thumbs.
+
+* Fixes for Coverity bugs and support new Gtk+ versions.
+
+
+overlay-scrollbar 0.2.14 (January 16, 2012)
+-------------------------------------------
+
+* New visuals.
+
+* Bigger thumb, easier to grab.
+
+* Bugs fixed:
+ 890986 Lotus Notes is incompatible with ayatana scrollbars
+
+
+overlay-scrollbar 0.2.13 (December 7, 2011)
+-------------------------------------------
+
+* Proximity area enlarged to the whole page.
+
+* New thumb positioning according to mouse pointer and bar position.
+
+* The thumb is more freely movable while touching an edge.
+
+* Press Control while dragging to enter fine-scroll mode.
+
+* Press Control while doing page up/down to do step up/down instead.
+
+* Jumping is now triggered via Middle Click or via Shift + Button1.
+
+* It is now possible to disable tests from the configure.
+
+* Other tweaks to animations and fixes, small performance improvements.
+
+* Bugs fixed:
+ 752338 Can no longer jump to a specific position in a document/window
+ 758576 Overlay Scrollbar should be revealed at any place on the edge of the...
+ 763247 Overlay ScrollBar not easily findable in a large document
+ 868739 Overlay scrollbars rendered in the wrong place when inside another...
+
+
+overlay-scrollbar 0.2.12 (October 19, 2011)
+-------------------------------------------
+
+* Updated blacklist:
+ added acroread.
+
+
+overlay-scrollbar 0.2.11 (September 13, 2011)
+---------------------------------------------
+
+* Updated blacklist:
+ added gimp-2.6, gimp-2.7, gimp-2.8.
+ removed apport-gtk, codeblocks, codelite, pgadmin3, update-manager.
+
+
+overlay-scrollbar 0.2.10 (September 7, 2011)
+--------------------------------------------
+
+* Use proper object checks on public functions.
+
+
+overlay-scrollbar 0.2.9 (September 1, 2011)
+-------------------------------------------
+
+* Bugs fixed:
+ 838733 Page scroll kinetic should depend on the actual scroll
+
+
+overlay-scrollbar 0.2.8 (September 1, 2011)
+-------------------------------------------
+
+* Bugs fixed:
+ 838258 thumb does not always change look when dragged
+
+
+overlay-scrollbar 0.2.7 (August 24, 2011)
+-----------------------------------------
+
+* Blacklist firefox, firefox-trunk, gimp.
+
+
+overlay-scrollbar 0.2.6 (August 9, 2011)
+----------------------------------------
+
+* Bugs fixed:
+ 822806 overlay scrollbar does not work in some windows
+
+
+overlay-scrollbar 0.2.5 (July 14, 2011)
+---------------------------------------
+
+* Support insensitive state.
+
+
+overlay-scrollbar 0.2.4 (July 8, 2011)
+--------------------------------------
+
+* Animate page up and page down.
+
+* Fine scroll after paging.
+
+* Enable glib assertions on releases.
+
+* Fix thumb rendering on page up and down.
+
+* Bugs fixed:
+ 778891 The "Timeout before the fade-out" value of 250ms for cursor on thumb...
+
+
+overlay-scrollbar 0.2.3 (June 30, 2011)
+---------------------------------------
+
+* New thumb design.
+
+* Minor bug fixes.
+ 
+
+overlay-scrollbar 0.2.2 (June 29, 2011)
+---------------------------------------
+
+* Scrollbars now use Gtk+ colors.
+
+* Scrollbars are now less rounded.
+
+* Support RTL locales and different scrolled window placements.
+
+* Added tolerance to pageup and down buttons before dragging.
+
+* Adjusted timings before hiding the thumb.
+
+* Shrink the thumb size on small scrolled windows.
+
+* Bugs fixed:
+ 771450 Cannot scroll in small areas
+ 761138 support left (and top) scrollbar placements
+ 782022 Overlay scrollbars do not work in right to left locales
+ 800387 emacs23-x crashing in liboverlay-scrollbar-0.2.so.0
+
+
+overlay-scrollbar 0.2.1 (June 15, 2011)
+---------------------------------------
+
+* Gtk+ 3 support, based on the work by Andrea Azzarone.
+
+* Performance boost with updated versions of both Gtk+ 2 and 3.
+
+* Refinements in the code and coding style fixes.
+
+* Various general fixes and improvements.
+
+* Bugs fixed:
+ 781432 In nvidia-settings overlay scrollbars are kept displayed when they...
+ 767823 Overlay scrollbar hidden underneath bottom panel in Ubuntu Classic mode
+ 773930 Overlay scrollbar not working correctly with font selection dialog
+ 796828 overlay-scrollbar requires two mouse targetings
+
+* Contributors:
+ Andrea Azzarone <azzaronea@gmail.com>
+
+
+overlay-scrollbar 0.2.0 (May 18, 2011)
+--------------------------------------
+
+* Major reshuffle in the code, hopefully easier to read.
+
+* Added a patch which enables the scrollbars almost globally.
+
+* Bugs fixed:
+ 728838 Add visual connection after pageup/down via thumb
+ 773263 scrolling doesn't work at the edge of the screen (fitts' law is broken)
+ 774610 Overlay Scrollbar arrows are off-center for certain themes (e.g....
+ 765719 hide the thumb when selecting text or on general interaction
+ 735867 slowly moving the thumb when it's the the beginning, results in...
+ 783261 Using scrollbar can break windows while list search is taking place
+
+
+overlay-scrollbar 0.1.12 (April 27, 2011)
+-----------------------------------------
+
+* Bugs fixed:
+ 771563 anjuta doesn't display scrollbar after resetting the layout
+
+
+overlay-scrollbar 0.1.11 (April 27, 2011)
+-----------------------------------------
+
+* Un-blacklisted apps:
+ deja-dup, inkscape, lshw-gtk
+
+* Bugs fixed:
+ 771511 some apps show grey overlay instead orange even if the window is focused
+
+
+overlay-scrollbar 0.1.10 (April 26, 2011)
+-----------------------------------------
+
+* Bugs fixed:
+ 763707 Scrollbar's slider appears away from the mouse
+ 769427 liboverlay doesn't work in detached tabs
+ 769460 scrollbar doesn't work in liferea
+ 770625 overlay-scrollbar_0.1.9-0ubuntu1 update causes vmware workstation to...
+ 769217 Cardapio doesn't work propely with new scrollbars (Ubuntu 11.04)
+
+
+overlay-scrollbar 0.1.9 (April 21, 2011)
+----------------------------------------
+
+* Install a xsession script to enable the scrollbars globally.
+
+* Contributors:
+ Ken VanDine <ken.vandine@canonical.com>
+
+
+overlay-scrollbar 0.1.8 (April 20, 2011)
+----------------------------------------
+
+* Few stability fixes, blacklist apps that expose functionality issues.
+
+
+overlay-scrollbar 0.1.7 (April 13, 2011)
+----------------------------------------
+
+* Active windows have focused overlay/bar/pager, inactive windows follow mouse.
+
+* Bugs fixed:
+ 754717 ccsm crashed with SIGSEGV in os_pager_draw()
+ 754927 Banshee.exe crashed with SIGABRT in g_main_context_dispatch()
+ 754306 The last line of files in a directory is being 'duplicated' when...
+ 754736 should not stay on screen when alt-tabbing to another application
+ 758581 Scrollbar does not work with vinagre
+ 758046 Cannot use the thumb to PgUp/PgDown multiple times, because it fades...
+ 756243 Enabling Desktop-based Viewport Switching can cause fade on scroll...
+
+overlay-scrollbar 0.1.6 (April 7, 2011)
+---------------------------------------
+
+* Bugs fixed:
+ 737518 with compiz: if the window is unfocused and you click on one of its...
+ 746189 Black Background on Overlay Scrollbar in Banshee
+ 751444 hide the thumb after a timeout, with a fade-out animation
+ 750572 Package gives wrong website
+ 731653 Thumb blocks the right side of a maximized window
+ 737661 in wxWidgets, pager is not colored properly
+ 746862 animate the pager's colorization
+ 746864 colorize the pager following mouse movement
+ 750879 Add mouse-wheel functionality to the thumb
+ 751440 use g_source_remove instead g_object_ref/unref for g_timeout_add in...
+ 751442 lock position of the thumb when it's internal
+ 751652 Thumb doesn't fade-out after click (and no motion after release) in...
+ 752705 pager should immediately change color when changing gtk+ theme
+ 752836 wrong colorization on restacking
+ 753440 Panel's scrollbar is left behind
+
+
+overlay-scrollbar 0.1.5 (March 30, 2011)
+----------------------------------------
+
+* Performance tweaks
+
+* Bugs fixed:
+ 728412 Compiz: make it sibling of the parent toplevel window
+ 736992 Rendering error on multiple monitors
+ 743229 overlay scrollbar thumbs not hidden if different window has focus
+ 744431 Scrollbar stays on top after closing window
+ 741885 use proper allocation, not from the parent
+
+* Contributors:
+ Andrea Azzarone <azzaronea@gmail.com>
+
+
+overlay-scrollbar 0.1.4 (March 23, 2011)
+----------------------------------------
+
+* Bugs fixed:
+ 740276 Add whitelist support
+ 728418 Improve scrolling speed
+ 731369 Scrollbars are not working with wxWidgets
+ 741071 blacklist RTL languages
+ 737627 stop events when the thumb is unmapped
+
+
+overlay-scrollbar 0.1.3 (March 17, 2011)
+----------------------------------------
+
+* Performance tweaks
+
+* Bugs fixed:
+ 728664 Scrollbar (thumb) is not working in modal dialogs
+ 732091 unity's restore from maximize is breaking the positioning of overlay...
+ 735618 with jjardon's performance tweak branch, sometimes the pager is not...
+ 735906 You can scroll even if the thumb is not shown
+ 736076 rendering issues for the pager
+ 733031 Issues when reallocating widgets
+ 736280 The thumb has black borders after switching back to metacity
+ 733212 scrollbar should be shifted depending on the scrolled window's...
+
+
+overlay-scrollbar 0.1.2 (March 10, 2011)
+----------------------------------------
+
+* Bugs fixed:
+ 728411 Correctly show the pager when opening the app
+ 731366 BadAlloc in apps with many scrollbars
+ 730822 crash with evolution and overlay 0.1.1
+ 730849 Scrollbar overlay crashes Filezilla
+ 730892 gnome-system-monitor crash when switching to a tab with scrollbar
+ 731006 The scrollbar (pager+thumb) should be moved 1px left/up
+ 731459 Proximity does not work with empathy
+ 731650 Scroll position indicator is not visible in gedit Plugins list
+ 732712 issue with gtk-demo without configure event
+
+
+overlay-scrollbar 0.1.1 (March 7, 2011)
+---------------------------------------
+
+* Bugs fixed:
+ 728416 Fix crashes in hide_thumb
+ 728415 Maximized windows: Move thumb internally when there's not enough...
+ 728407 Unwanted scrollbars are appearing for hidden scrolled windows...
+
+
+overlay-scrollbar 0.1.0 (March 2, 2011)
+---------------------------------------
+
+Initial release
